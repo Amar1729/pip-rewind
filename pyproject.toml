@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "pip-rewind"
+version = "0.1.0"
+description = "Install python modules from pypi from a previous date in history"
+authors = ["Amar Paul <amar.paul16@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+rss-parser = "^0.2.3"
+python-dateutil = "^2.8.1"
+pytz = "^2021.1"
+tzlocal = "^2.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.4"
+
+[tool.poetry.scripts]
+pip-rewind = "pip_rewind.cli:main"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
