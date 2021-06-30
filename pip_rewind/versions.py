@@ -2,6 +2,7 @@
 
 import datetime
 from dateutil import parser
+from itertools import starmap
 
 from typing import Generator, Optional, Tuple
 
@@ -80,8 +81,8 @@ def get_first_version_before_json(pkg: str, version: str, date: dt) -> Result[st
 
     if r.status_code == 200:
         for version, parsed_date in sorted(
-            map(
-                lambda e: (e[0], date_from_release(e[1])),
+            starmap(
+                lambda v, r: (v, date_from_release(r)),
                 r.json()["releases"].items(),
             ),
             key=lambda e: e[1],
