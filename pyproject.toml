@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pip-rewind"
-version = "0.1.0"
+version = "0.1.1"
 description = "Install python modules from pypi from a previous date in history"
 authors = ["Amar Paul <amar.paul16@gmail.com>"]
 license = "MIT"
