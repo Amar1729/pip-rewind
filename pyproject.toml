@@ -4,6 +4,21 @@ version = "0.1.0"
 description = "Install python modules from pypi from a previous date in history"
 authors = ["Amar Paul <amar.paul16@gmail.com>"]
 license = "MIT"
+readme = "README.md"
+
+include = [
+    { path = "tests", format = "sdist" }
+]
+
+repository = "https://github.com/Amar1729/pip-rewind"
+
+keywords = ["packaging", "dependency"]
+
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Build Tools",
+]
 
 [tool.poetry.dependencies]
 python = "^3.7"
