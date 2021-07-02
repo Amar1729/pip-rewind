@@ -1,17 +1,27 @@
 # pip-rewind
 
-`pip-rewind` is a command-line tool that can rewind pypi modules (given as command-line arguments or read from a requirements.txt file) to a previous date in time.
+`pip-rewind` is a command-line tool that can rewind pypi module versions (given as command-line arguments or read from a requirements.txt file) to a previous date in time.
+
+This tool doesn't install any packages itself - rather, it generates output with modules constrained to specific versions, which can then be fed into `pip install`.
 
 ## Usage
 
 ```
-$ pip-rewind --date "09/01/2020" requests
+$ pip-rewind --date "09/01/2020" requests > new-requirements.txt
+$ pip install -r new-requirements.txt
 ```
 
 Or give it a requirements file:
 
 ```
-$ pip-rewind --date "07/01/2019" -r requirements.txt
+$ pip-rewind --date "07/01/2019" -r requirements.txt > new-requirements.txt
+$ pip install -r new-requirements.txt
+```
+
+You can also pipe the output directly to pip if preferred:
+
+```
+$ pip-rewind --date "12/01/2020 -r requirements.txt | pip install -r /dev/stdin
 ```
 
 Currently, this package only parses a simple subset of valid requirements lines:
